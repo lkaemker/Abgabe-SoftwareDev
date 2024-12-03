@@ -1,0 +1,70 @@
+package homework_mockito;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+class StudentManagerTest {
+
+    private StudentManager studentManager;
+    private List<Course> mockCourses;
+
+    @BeforeEach
+    public void setup() {
+        // Erstelle eine gemockte Liste von Kursen
+        mockCourses = Mockito.mock(List.class);
+        studentManager = new StudentManager(null, mockCourses);
+    }
+
+    @Test
+    void testGenerateStudentDistribution_Success() {
+        // Erstelle Mock-Kurs und Übungsgruppen
+        Course mockCourse = Mockito.mock(Course.class);
+        ExerciseGroup mockGroup1 = Mockito.mock(ExerciseGroup.class);
+        ExerciseGroup mockGroup2 = Mockito.mock(ExerciseGroup.class);
+
+        // Erstelle Mock-Studenten
+        Student student1 = new Student("Alice", "A123");
+        Student student2 = new Student("Bob", "B456");
+
+        // Simuliere Verhalten der Mocks
+        when(mockCourse.getId()).thenReturn("Software Engineering");
+        when(mockCourse.getExerciseGroups()).thenReturn(List.of(mockGroup1, mockGroup2));
+        when(mockGroup1.getName()).thenReturn("Group 1");
+        when(mockGroup1.getStudents()).thenReturn(List.of(student1));
+        when(mockGroup2.getName()).thenReturn("Group 2");
+        when(mockGroup2.getStudents()).thenReturn(List.of(student2));
+
+        when(mockCourses.stream())
+                .thenReturn(List.of(mockCourse).stream());
+
+        // Führe die Methode aus
+        Map<String, List<String>> distribution = studentManager.generateStudentDistribution("Software Engineering");
+
+        // Überprüfe die Ergebnisse
+        assertEquals(2, distribution.size());
+        assertTrue(distribution.containsKey("Group 1"));
+        assertTrue(distribution.containsKey("Group 2"));
+        assertEquals(List.of("Alice (A123)"), distribution.get("Group 1"));
+        assertEquals(List.of("Bob (B456)"), distribution.get("Group 2"));
+    }
+
+    @Test
+    void testGenerateStudentDistribution_CourseNotFound() {
+        // Simuliere keinen passenden Kurs
+        when(mockCourses.stream())
+                .thenReturn(Stream.of());
+
+        // Führe Methode aus und erwarte eine Exception
+        assertThrows(IllegalArgumentException.class, () ->
+                studentManager.generateStudentDistribution("Software Engineering")
+        );
+    }
+}
