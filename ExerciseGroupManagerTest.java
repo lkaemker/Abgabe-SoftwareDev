@@ -45,6 +45,7 @@ public class ExerciseGroupManagerTest {
     }
 
     // Stream of invalid inputs for the invalid input test
+
     private static Stream<Arguments> provideInvalidInputs() {
         return Stream.of(
                 Arguments.of(30, 0, 3),   // Invalid group size (0)
