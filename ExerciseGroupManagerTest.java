@@ -1,65 +1,58 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.stream.Stream;
+import org.junit.jupiter.params.provider.Arguments;
 
 public class ExerciseGroupManagerTest {
 
-    @Test
-    public void testExactFit() {
+    @ParameterizedTest
+    @DisplayName("Test valid input cases")
+    @CsvSource({
+            "30, 10, 3, 0",    // Exact fit: 30 students, 10 per group, 3 groups -> no remainder
+            "35, 10, 3, 5",    // Overflow: 35 students, 10 per group, 3 groups -> 5 unassigned
+            "20, 10, 3, 0",    // Below capacity: 20 students, 10 per group, 3 groups -> no remainder
+            "0, 10, 3, 0"      // Zero students: 0 students, 10 per group, 3 groups -> no students to assign
+    })
+    public void testValidInputs(int totalStudents, int groupSize, int availableGroups, int expected) {
         ExerciseGroupManager manager = new ExerciseGroupManager();
-        int totalStudents = 30;
-        int groupSize = 10;
-        int availableGroups = 3;
-
-        // Should return 0 as all students can be assigned with no remainder.
-        assertEquals(0, manager.checkGroupCapacities(totalStudents, groupSize, availableGroups));
+        assertEquals(expected, manager.checkGroupCapacities(totalStudents, groupSize, availableGroups));
     }
 
-    @Test
-    public void testExceedCapacity() {
+    @ParameterizedTest
+    @DisplayName("Test invalid input cases")
+    @MethodSource("provideInvalidInputs")
+    public void testInvalidInputs(int totalStudents, int groupSize, int availableGroups) {
         ExerciseGroupManager manager = new ExerciseGroupManager();
-        int totalStudents = 35;
-        int groupSize = 10;
-        int availableGroups = 3;
-
-        // Should return 5 as there is overflow with 5 students unassigned.
-        assertEquals(5, manager.checkGroupCapacities(totalStudents, groupSize, availableGroups));
-    }
-
-    @Test
-    public void testBelowCapacity() {
-        ExerciseGroupManager manager = new ExerciseGroupManager();
-        int totalStudents = 20;
-        int groupSize = 10;
-        int availableGroups = 3;
-
-        // Should return 0 as all students fit within available capacity.
-        assertEquals(0, manager.checkGroupCapacities(totalStudents, groupSize, availableGroups));
-    }
-
-    @Test
-    public void testZeroStudents() {
-        ExerciseGroupManager manager = new ExerciseGroupManager();
-        int totalStudents = 0;
-        int groupSize = 10;
-        int availableGroups = 3;
-
-        // Should return 0 as there are no students to assign.
-        assertEquals(0, manager.checkGroupCapacities(totalStudents, groupSize, availableGroups));
-    }
-
-    @Test
-    public void testInvalidInput() {
-        ExerciseGroupManager manager = new ExerciseGroupManager();
-
-        // Testing invalid group size
         assertThrows(IllegalArgumentException.class, () -> {
-            manager.checkGroupCapacities(30, 0, 3);
+            manager.checkGroupCapacities(totalStudents, groupSize, availableGroups);
         });
+    }
 
-        // Testing invalid available groups
-        assertThrows(IllegalArgumentException.class, () -> {
-            manager.checkGroupCapacities(30, 10, -1);
-        });
+    @Test
+    @DisplayName("Test negative total students")
+    public void testNegativeStudents() {
+        ExerciseGroupManager manager = new ExerciseGroupManager();
+        int totalStudents = -30; // Negative students
+        int groupSize = 10;
+        int availableGroups = 3;
+
+        // Should return 0 according to the method's specification
+        assertEquals(0, manager.checkGroupCapacities(totalStudents, groupSize, availableGroups));
+    }
+
+    // Stream of invalid inputs for the invalid input test
+    private static Stream<Arguments> provideInvalidInputs() {
+        return Stream.of(
+                Arguments.of(30, 0, 3),   // Invalid group size (0)
+                Arguments.of(30, 10, -1), // Invalid number of groups (-1)
+                Arguments.of(30, -10, 3)  // Negative group size
+        );
     }
 }
+
+
 

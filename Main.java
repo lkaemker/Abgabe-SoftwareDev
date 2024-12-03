@@ -35,6 +35,8 @@ public class Main {
         // Finding a lecturer by ID
         Lecturer foundLecturer = lecturerManager.getEntityById(345, l -> l.getId() == 345);
         System.out.println("Found Lecturer: " + (foundLecturer != null ? foundLecturer.getFirstName() : "Not Found"));
+
+
     }
 }
 
