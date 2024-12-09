@@ -2,7 +2,7 @@
 Von LeonK 7423162
 Dienstag 16:00-17:30
 
-Bitte hier deinen vollen Namen eintragen.
+**Bitte hier deinen vollen Namen eintragen. Außerdem einmal das Repository aufräumen, so dass man sich schneller zurecht findet (nutze z.B. einzelne Ordner für die jeweiligen Abgaben).**
 
 # Grading
 
@@ -10,11 +10,18 @@ Bitte hier deinen vollen Namen eintragen.
 | ----------- | -------- | -------- | -------- | -------- | -------- | -------- |
 | Homework 01 | 3.5/4    | 4.5/6    | 5/5      | 4.75/5   | -        | 17.75/20 |
 | Homework 02 | 3.75/4.5 | 4.5/4.5  | 5/6      | 5/5      | -        | 18.25/20 |
+| Homework 03 | 7.5/8    | 5.25/5.5 | 6.5/6.5  | -        | -        | 19.25/20 |
 | Homework 04 | 3.5/5    | 4.75/5   | 6.25/7   | 2.75/3   | -        | 17.25/20 |
 
 ### Erläuterungen zur Bewertung
 
 HW04: Siehe Bemerkungen im Ordner *Correction Files*.
+
+HW03:
+- Ex. 1 a): Siehe Bemerkungen im Ordner *Correction Files*.
+- Ex. 1 b): Die Association von Student zu ExerciseGroup aus dem Klassendiagramm wurde nicht umgesetzt.
+- Ex. 2: Eingaparameter id wird von getEntityById() gar nicht benutzt \[-0.25p\].
+- Ex. 3: ExerciseGroupManager-Objekt besser in einer @BeforeEach-Methode initialisieren.
 
 HW02:
 - Ex. 1: Merge-Knoten vom Branching fehlt. Der müsste vor dem Fork platziert werden und der Pfeil vom Adjust-Branch würde dann dorthin gehen. Fehlende Beschriftung eines Branches (Boolean Expression an Pfeil).
