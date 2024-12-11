@@ -1,5 +1,5 @@
 # Abgabe-SoftwareDevo
-Von LeonK 7423162
+Von Leon Kämker 7423162
 Dienstag 16:00-17:30
 
 **Bitte hier deinen vollen Namen eintragen. Außerdem einmal das Repository aufräumen, so dass man sich schneller zurecht findet (nutze z.B. einzelne Ordner für die jeweiligen Abgaben).**
