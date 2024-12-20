@@ -2,8 +2,6 @@
 Von Leon Kämker 7423162
 Dienstag 16:00-17:30
 
-**Bitte hier deinen vollen Namen eintragen. Außerdem einmal das Repository aufräumen, so dass man sich schneller zurecht findet (nutze z.B. einzelne Ordner für die jeweiligen Abgaben).**
-
 # Grading
 
 | Sheet       | Ex. 1    | Ex. 2    | Ex. 3    | Ex. 4    | Ex. 5    | Sum      |
@@ -12,10 +10,11 @@ Dienstag 16:00-17:30
 | Homework 02 | 3.75/4.5 | 4.5/4.5  | 5/6      | 5/5      | -        | 18.25/20 |
 | Homework 03 | 7.5/8    | 5.25/5.5 | 6.5/6.5  | -        | -        | 19.25/20 |
 | Homework 04 | 3.5/5    | 4.75/5   | 6.25/7   | 2.75/3   | -        | 17.25/20 |
+| Homework 05 | 5/5      | 2.75/7   | 2.5/8    | -        | -        | 10.25/20 |
 
 ### Erläuterungen zur Bewertung
 
-HW04: Siehe Bemerkungen im Ordner *Correction Files*.
+HW04, HW05: Siehe Bemerkungen im Ordner *Correction Files*.
 
 HW03:
 - Ex. 1 a): Siehe Bemerkungen im Ordner *Correction Files*.
