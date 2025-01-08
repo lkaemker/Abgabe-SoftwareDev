@@ -1,0 +1,27 @@
+# Basis-Image mit Maven und JDK
+FROM maven:3.9.9-eclipse-temurin-23-alpine AS builder
+
+# Arbeitsverzeichnis für den Build festlegen
+WORKDIR /app
+
+# Abhängigkeiten und Projektdateien hinzufügen
+COPY ../Task1/pom.xml .
+COPY src ./src
+
+# Maven-Build ausführen, um die .jar-Datei zu erstellen
+RUN mvn clean package -DskipTests
+
+# Phase 2: Minimaler Runtime-Container
+FROM eclipse-temurin:23-jre
+
+# Arbeitsverzeichnis für die Anwendung
+WORKDIR /app
+
+# Kopieren der kompilierten .jar aus dem Builder-Container
+COPY --from=builder /app/target/*.jar app.jar
+
+# Port, der von der Anwendung verwendet wird (optional)
+EXPOSE 8080
+
+# Ausführbefehl für die .jar-Datei
+ENTRYPOINT ["java", "-jar", "app.jar"]
