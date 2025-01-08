@@ -11,8 +11,13 @@ Dienstag 16:00-17:30
 | Homework 03 | 7.5/8    | 5.25/5.5 | 6.5/6.5  | -        | -        | 19.25/20 |
 | Homework 04 | 3.5/5    | 4.75/5   | 6.25/7   | 2.75/3   | -        | 17.25/20 |
 | Homework 05 | 5/5      | 2.75/7   | 2.5/8    | -        | -        | 10.25/20 |
+| Homework 06 | 6/8      | 7/8      | 4/4      | -        | -        | 17/20    |
 
 ### Erläuterungen zur Bewertung
+
+HW06:
+- Ex. 1: Der Code wurde lediglich als Datei ExerciseGroupManagerTest.class abgegeben. Bitte Java-Code immer in (unkompilierten) Java-Dateien (also mit Endung .java) abgeben. Beim nächsten Mal wird eine solche Abgabe nicht mehr akzeptiert. Aus der Tabelle zu HW05 Ex. 2 wurden lediglich die Testfälle 2 und 3 umgesetzt \[-2p\].
+- Ex. 2 a): Bei der Datei "Abgabe6 nr2a" fehlt die Dateiendung .java. Zeile 5 und 12 doppeln sich quasi. Für eine von beiden Importvarianten entscheiden und dann die andere streichen. Fehlende Mocks für die Student-Objekte und die darauf in generateStudentDistribution() aufgerufenen Methoden \[-1p\].
 
 HW04, HW05: Siehe Bemerkungen im Ordner *Correction Files*.
 
