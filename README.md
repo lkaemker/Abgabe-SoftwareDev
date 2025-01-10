@@ -12,8 +12,14 @@ Dienstag 16:00-17:30
 | Homework 04 | 3.5/5    | 4.75/5   | 6.25/7   | 2.75/3   | -        | 17.25/20 |
 | Homework 05 | 5/5      | 2.75/7   | 2.5/8    | -        | -        | 10.25/20 |
 | Homework 06 | 6/8      | 7/8      | 4/4      | -        | -        | 17/20    |
+| Homework 07 | 2/4      | 4/4      | 8/8      | 2.5/4    | -        | 16.5/20  |
 
 ### Erläuterungen zur Bewertung
+
+HW07:
+- Ex. 1 a): Projekt nicht richtig mit den Abhängigkeiten von Spring Boot und Maven angelegt. Das kann man in der Datei pom.xml überprüfen, die im gepushten Projekt aber nicht existiert \[-1p\].
+- Ex. 1 b) Copy-Paste-Fehler: Im Aufgabentext stand explizit, dass das einzelne Zeilen sind, die in der application.properties Datei ergänzt werden müssen. Hintereinander in einer bzw. in zwei Zeilen gesetzt kann Spring die Statements nicht richtig interpretieren \[-1p\].
+- Ex. 4: DELETE nicht getestet \[-1p\]. Ein Test, was passiert, wenn eine GET-Anfrage mit einer ID abgeschickt wird, die es in der Datenbank nicht gibt, wäre noch interessant gewesen \[-0.5p\].
 
 HW06:
 - Ex. 1: Der Code wurde lediglich als Datei ExerciseGroupManagerTest.class abgegeben. Bitte Java-Code immer in (unkompilierten) Java-Dateien (also mit Endung .java) abgeben. Beim nächsten Mal wird eine solche Abgabe nicht mehr akzeptiert. Aus der Tabelle zu HW05 Ex. 2 wurden lediglich die Testfälle 2 und 3 umgesetzt \[-2p\].
