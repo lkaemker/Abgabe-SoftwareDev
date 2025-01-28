@@ -13,8 +13,14 @@ Dienstag 16:00-17:30
 | Homework 05 | 5/5      | 2.75/7   | 2.5/8    | -        | -        | 10.25/20 |
 | Homework 06 | 6/8      | 7/8      | 4/4      | -        | -        | 17/20    |
 | Homework 07 | 2/4      | 4/4      | 8/8      | 2.5/4    | -        | 16.5/20  |
+| Homework 08 | -        | -        | -        | -        | -        | Skipped  |
+| Homework 09 | 2/4      | 8/8      | 0/8      | -        | -        | 10/20    |
 
 ### Erläuterungen zur Bewertung
+
+HW09:
+- Ex. 1: .jar-File fehlt \[-2p\]. Der Fehler könnte mit der Beschränkung der Upload-Größe pro Datei zusammenhängen (dafür müsste ich die Details sehen, um das genauer zu beurteilen). Zumindest das Problem war auch schon im Town Square angesprochen und am 18.12. beantwortet worden.
+- Ex. 3: Nicht bearbeitet.
 
 HW07:
 - Ex. 1 a): Projekt nicht richtig mit den Abhängigkeiten von Spring Boot und Maven angelegt. Das kann man in der Datei pom.xml überprüfen, die im gepushten Projekt aber nicht existiert \[-1p\].
